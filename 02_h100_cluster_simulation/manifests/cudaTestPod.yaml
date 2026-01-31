@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cudatestpod
+  namespace: gpu
+  labels:
+    app: cuda
+spec:
+  containers:
+    - name: cudatestpod
+      image: nvidia/cuda:13.1.1-cudnn-runtime-ubuntu24.04
+      command: ["sleep", "3600"]
+      resources:
+        limits:
+          nvidia.com/gpu: 1
+
