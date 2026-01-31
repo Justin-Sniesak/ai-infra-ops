@@ -47,7 +47,7 @@ ai-infra-ops/
 
 - Observability: Hubble UI + Hubble CLI for kernel-level flow auditing.
 
-**Architecture**
+**Architecture:**
 
 The architecture illustrates the control plane’s integration with virtualized GPU nodes and the eBPF data path. It maps the flow of inference requests through the Cilium service mesh, ensuring that every packet is authenticated and authorized before reaching simulated NVIDIA silicon.
 
@@ -61,7 +61,7 @@ Key concepts illustrated:
 
 - Zero-Trust egress boundaries preventing data exfiltration.
 
-**The Zero-Trust Mission**
+**The Zero-Trust Mission:**
 
 This platform operates on a "deny-by-default" posture:
 
@@ -73,7 +73,7 @@ This platform operates on a "deny-by-default" posture:
 
 - **Observed Validation:** Enforcement is verified through real-time packet drops in the eBPF datapath, captured via Hubble.
 
-**Observability and Validation**
+**Observability and Validation:**
 
 Observability is the primary mechanism for validating the security posture:
 
@@ -85,7 +85,7 @@ Observability is the primary mechanism for validating the security posture:
 
 - **Egress Auditing:** Confirmed policy-driven drops for unauthorized external traffic.
 
-**Operational Logs**
+**Operational Logs:**
 
 Detailed, chronological logs with visual "receipts" (screenshots) document the project's evolution. All phases have tested bash scripts which fully automate each phase:
 
@@ -93,7 +93,7 @@ Detailed, chronological logs with visual "receipts" (screenshots) document the p
 
 - **Phase 2:** GPU Simulation - H100 virtualization and Zero-Trust policy enforcement.
 
-**Key Lessons Learned**
+**Key Lessons Learned:**
 
 - **GPU Scheduling Logic:** The Kubernetes scheduler requires precise node labeling to prevent "Pending" state loops in virtualized environments.
 
