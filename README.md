@@ -18,7 +18,7 @@ ai-infra-ops/
 ├── 02_h100_cluster_simulation/
 │   ├── manifests/
 │   ├── screenshots/
-│   ├── cluster_architectural_diagram
+│   ├── cluster_architectural_diagram.png
 │   ├── h100_automation.sh
 │   ├── ops_log.md
 │   └── README.md
