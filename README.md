@@ -9,23 +9,19 @@ This is not a lab exercise or a reference architecture. It is an operational rec
 Repository Structure
 ```
 ai-infra-ops/
+├── 01_cluster_automation/
+│   ├── screenshots/
+│   ├── cluster_provisioning.sh/
+│   └── ops_log.md/
+│   └── README.md/
+├── 02_h100_cluster_simulation/
+│   ├── manifests/
+│   ├── screenshots/
+│   ├── cluster_architectural_diagram/
+│   ├── h100_automation.sh/
+│   ├── ops_log.md/
+│   └── README.md/
 ├── README.md
-├── architecture/
-│   └── h100-simulation-architecture.png
-├── 00-phase-0/
-│   ├── manifests/
-│   └── screenshots/
-├── 01-phase-1/
-│   ├── manifests/
-│   └── screenshots/
-├── 02-phase-2/
-│   ├── manifests/
-│   │   ├── fake-gpu-operator/
-│   │   └── cilium-ztp/
-│   └── screenshots/
-└── 03-phase-3/ (In Progress)
-    └── manifests/
-```
 
 **High-Level Overview**
 
