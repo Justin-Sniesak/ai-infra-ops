@@ -20,6 +20,7 @@ ai-infra-ops/
 │   ├── h100_automation.sh
 │   ├── ops_log.md
 │   └── README.md
+├── LICENSE.md
 └── README.md
 ```
 
