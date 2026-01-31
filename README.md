@@ -12,16 +12,16 @@ Repository Structure
 ai-infra-ops/
 ├── 01_cluster_automation/
 │   ├── screenshots/
-│   ├── cluster_provisioning.sh/
-│   └── ops_log.md/
-│   └── README.md/
+│   ├── cluster_provisioning.sh
+│   └── ops_log.md
+│   └── README.md
 ├── 02_h100_cluster_simulation/
 │   ├── manifests/
 │   ├── screenshots/
-│   ├── cluster_architectural_diagram/
-│   ├── h100_automation.sh/
-│   ├── ops_log.md/
-│   └── README.md/
+│   ├── cluster_architectural_diagram
+│   ├── h100_automation.sh
+│   ├── ops_log.md
+│   └── README.md
 └── README.md
 ```
 
