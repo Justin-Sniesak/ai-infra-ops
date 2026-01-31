@@ -1,0 +1,15 @@
+## Phase 1 - Cluster Creation
+**Summary:** Automated provisioning of four node cluster, cilium, hubble
+
+- 2026-01-30 Label all worker nodes with role then validate all nodes in the cluster are joined and ready.
+  ![cl1](Cluster/cl1.jpg)
+- 2026-01-30 Install Cilium - Run and validate tests validate status
+  ![cl2](Cluster/cl2.jpg)
+- 2026-01-30 Validate Hubble install and UX readiness.
+  ![cl3](Cluster/cl3.jpg)
+- 2026-01-30 Validate UX comes up and is accessible once port forwarding is enabled from the controlplane node.
+  ![cl5](Cluster/cl4.jpg)
+- 2026-01-30 Validate traffic flows and api query-availability.
+  ![cl6](Cluster/cl5.jpg)
+- 2026-01-30 Validate can trace east west traffic in UX.
+  ![cl7](Cluster/cl6.jpg)
