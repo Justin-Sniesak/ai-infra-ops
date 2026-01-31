@@ -7,8 +7,6 @@ The goal of this project is to architect a platform capable of supporting missio
 This is not a lab exercise or a reference architecture. It is an operational record of a specialized platform built, debugged, and validated to survive the "noise" of production AI operations. There are seven additional phases planned.
 
 ```
-Repository Structure
-
 ai-infra-ops/
 ├── 01_cluster_automation/
 │   ├── screenshots/
