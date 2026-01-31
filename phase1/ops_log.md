@@ -2,7 +2,7 @@
 **Summary:** Automated provisioning of four node cluster, cilium, hubble
 
 - 2026-01-30 Label all worker nodes with role then validate all nodes in the cluster are joined and ready.
-  ![cl1](../screenshots/cl1.jpg)
+  ![cl1](../phase1/screenshots/cl1.jpg)
 - 2026-01-30 Install Cilium - Run and validate tests validate status
   ![cl1](phase1/screenshots/cl2.jpg)
 - 2026-01-30 Validate Hubble install and UX readiness.
