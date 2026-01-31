@@ -13,7 +13,7 @@ ai-infra-ops/
 ├── 01_cluster_automation/
 │   ├── screenshots/
 │   ├── cluster_provisioning.sh
-│   └── ops_log.md
+│   ├── ops_log.md
 │   └── README.md
 ├── 02_h100_cluster_simulation/
 │   ├── manifests/
