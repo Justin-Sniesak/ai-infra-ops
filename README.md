@@ -21,6 +21,7 @@ ai-infra-ops/
 │   ├── ops_log.md/
 │   └── README.md/
 └── README.md
+```
 
 **High-Level Overview**
 
