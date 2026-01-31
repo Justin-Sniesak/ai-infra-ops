@@ -1,0 +1,31 @@
+#This workflow automatically updates my Golang page everytime I update my README.md with additional work completed I want to showcase
+name: Deploy ai-infra-ops README.md updates to GitHub pages website
+#This is workflow name - will appear in the list of workflow runs
+run-name: AI
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'README.md'
+      
+jobs:
+  build:
+    #Specifies the type of VM to create
+    runs-on: ubuntu-latest
+    steps:
+      #Step1 - Checks out the repo and clones to the VM
+      - name: Checkout Repository 
+        uses: actions/checkout@v4
+
+      #Step2 - Updates content of main page using the peaceiris tool
+      - name: Deploy from README.md
+        uses: peaceiris/actions-gh-pages@v3
+      #Configuration variables needed for the job to run
+        with: 
+          #Temp authentication token needed for the job to run
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          #Source destination - root
+          publish_dir: '.'
+          #Target destination - root
+          destination_dir: ''
