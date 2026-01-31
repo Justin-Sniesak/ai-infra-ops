@@ -21,7 +21,7 @@ ai-infra-ops/
 │   ├── h100_automation.sh/
 │   ├── ops_log.md/
 │   └── README.md/
-├── README.md
+└── README.md
 
 **High-Level Overview**
 
