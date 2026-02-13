@@ -32,6 +32,16 @@
   ![h15](../03_hyperscale_GPU/screenshots/h15.jpg)
 - 02-11-2026 MI355X GPU-Operator pods and namespace creation.
   ![h16](../03_hyperscale_GPU/screenshots/h16.jpg)
+- 02-11-2026 MI350X GPU-Operator pods and namespace creation.
+  ![h17](../03_hyperscale_GPU/screenshots/h17.jpg)
+- 02-11-2026 MI325X GPU-Operator pods and namespace creation.
+  ![h18](../03_hyperscale_GPU/screenshots/h18.jpg)
+- 02-11-2026 A100 GPU-Operator pods and namespace creation.
+  ![h19](../03_hyperscale_GPU/screenshots/h19.jpg)
+- 02-11-2026 MI300X GPU-Operator pods and namespace creation.
+  ![h20](../03_hyperscale_GPU/screenshots/h20.jpg)
+- 02-11-2026 MI300A GPU-Operator pods and namespace creation.
+  ![h21](../03_hyperscale_GPU/screenshots/h21.jpg)
 
 
 
