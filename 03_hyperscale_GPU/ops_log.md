@@ -52,6 +52,12 @@
   ![h25](../03_hyperscale_GPU/screenshots/h25.jpg)
 - 02-11-2026 B580 GPU-Operator pods and namespace creation.
   ![h26](../03_hyperscale_GPU/screenshots/h26.jpg)
+- 02-11-2026 Deployment provisioning and write output to txt file for each deployment (see associated folder) (1 of 2).
+  ![h27](../03_hyperscale_GPU/screenshots/h27.jpg)
+- 02-11-2026 Deployment provisioning and write output to txt file for each deployment (see associated folder) (2 of 2).
+  ![h28](../03_hyperscale_GPU/screenshots/h28.jpg)
+- 02-11-2026 Validate etcd utilization, return total script runtime followed by final echo notifying operator script run has concluded.
+  ![h29](../03_hyperscale_GPU/screenshots/h29.jpg)
 
 
 
