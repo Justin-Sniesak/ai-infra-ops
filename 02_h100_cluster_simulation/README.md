@@ -1,4 +1,4 @@
-**Phase 2: H100 GPU Simulation & Zero-Trust Security**
+### Phase 2: H100 GPU Simulation & Zero-Trust Security
 
 This phase pivots from foundational networking to AI Infrastructure Simulation. By leveraging virtual GPU operators and Cilium's security identity, this project establishes a hardened environment for high-value GPU workloads.
 
