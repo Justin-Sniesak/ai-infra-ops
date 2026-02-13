@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jaguarshores
+spec:
+  replicas: 1000
+  selector:
+    matchLabels:
+      gpu: jaguarshores
+  template:
+    metadata:
+      labels:
+        gpu: jaguarshores
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: type
+                    operator: In
+                    values:
+                      - kwok
+      tolerations:
+        - key: "kwok.x-k8s.io/node"
+          operator: "Exists"
+          effect: "NoSchedule"
+      containers:
+        - name: jaguarshores
+          image: nvidia/cuda:13.1.1-cudnn-runtime-ubuntu24.04
+          command: ["sleep", "3600"]
+          resources:
+            limits:
+              intel.com/gpu: 1
+              cpu: "10m"
+              memory: "32Mi"
+            requests:
+              intel.com/gpu: 1
+              cpu: "10m"
+              memory: "32Mi"
