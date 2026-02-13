@@ -394,8 +394,8 @@ echo "Validating gpu-operator pods are ready..."
 kubectl wait --for=condition=Available deployment/gpu-operator -n mi350x --timeout=30s
 kubectl wait --for=condition=Ready pods --all -n mi350x --timeout=30s
 kubectl get pods -n mi350x
-echo "Validating GPUs provisioned for each node - should be 10 for each for a total of 1000. See hyperscale_output_nodes/mi300xNodeGPUCount.txt for details"
-kubectl get nodes -o custom-columns='NAME:.metadata.name,GPU_COUNT:.status.allocatable.nvidia\.com/gpu,GPU_TYPE:.metadata.labels.gpu' >> hyperscale_output_nodes/mi300xNodeGPUCount.txt
+echo "Validating GPUs provisioned for each node - should be 10 for each for a total of 1000. See hyperscale_output_nodes/mi350xNodeGPUCount.txt for details"
+kubectl get nodes -o custom-columns='NAME:.metadata.name,GPU_COUNT:.status.allocatable.nvidia\.com/gpu,GPU_TYPE:.metadata.labels.gpu' >> hyperscale_output_nodes/mi350xNodeGPUCount.txt
 sleep 10
 kubectl delete clusterrole compute-domain-controller-role fake-kwok-gpu-device-plugin fake-device-plugin topology-server mig-faker fake-status-exporter fake-status-updater --ignore-not-found
 kubectl delete clusterrolebinding compute-domain-controller-role-binding fake-kwok-gpu-device-plugin fake-device-plugin topology-server mig-faker fake-status-exporter fake-status-updater --ignore-not-found
