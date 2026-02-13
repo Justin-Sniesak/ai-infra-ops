@@ -2,7 +2,7 @@
 
 This phase pivots from foundational networking to AI Infrastructure Simulation. By leveraging virtual GPU operators and Cilium's security identity, this project establishes a hardened environment for high-value GPU workloads.
 
-**Core Objective**
+*Core Objective*
 
 Simulate high-density H100 GPU resources and implement a Zero-Trust (ZTP) security posture to prevent data exfiltration in AI training environments.
 
