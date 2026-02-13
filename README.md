@@ -1,10 +1,8 @@
 **ai-infra-ops**
 
-This repository documents the design, implementation, and validation of a high-density AI infrastructure platform. It tracks the evolution from a baseline kubeadm cluster to a specialized GPU-orchestration environment utilizing Cilium for eBPF-based security and Run:ai for hardware simulation.
+This repository documents the design, implementation, and validation of a high-density AI infrastructure platform. It tracks the evolution from a baseline kubeadm cluster to a hyperscale GPU-orchestration environment utilizing Cilium for eBPF-based security, Run:ai for hardware simulation, and KWOK for hyperscale control-plane testing.
 
-The goal of this project is to architect a platform capable of supporting mission-critical AI workloads while enforcing a Zero-Trust, identity-based networking model at the kernel level.
-
-This is not a lab exercise or a reference architecture. It is an operational record of a specialized platform built, debugged, and validated to survive the "noise" of production AI operations. There are seven additional phases planned.
+This is not a lab exercise or a reference architecture. It is an operational record of a specialized platform built, debugged, and validated to survive the "noise" of production AI operations.
 
 ```
 ai-infra-ops/
@@ -20,6 +18,21 @@ ai-infra-ops/
 │   ├── h100_automation.sh
 │   ├── ops_log.md
 │   └── README.md
+├── 03_hyperscale_GPU/
+│   ├── buildscript_removescript_archdiagram/
+│   │   ├── hyperscaleautomation.sh         # 700+ line hydration engine
+│   │   ├── hyperscaleGPUFleet.drawio.png   # Phase 3 Architecture
+│   │   └── kwokRemove.sh
+│   ├── hyperscale_output_deployments/       # Pod-level validation receipts (20 types)
+│   │   ├── [vendor]Deployment.txt
+│   │   └── [vendor]PodsGPUCount.txt
+│   ├── hyperscale_output_nodes/             # Node-level inventory receipts (20 types)
+│   │   ├── [vendor]Nodes.txt
+│   │   └── [vendor]NodeGPUCount.txt
+│   ├── manifests/
+│   │   ├── deployments/                    # 20 Hardware-specific Deployment YAMLs
+│   │   ├── nodes/                          # 20 KWOK Node manifests (NVIDIA, AMD, Intel)
+│   │   └── scripts/                        # Supporting for-loop bash orchestration
 ├── LICENSE.md
 └── README.md
 ```
@@ -32,70 +45,48 @@ ai-infra-ops/
 
 - **Networking:** Cilium CNI (Strict eBPF mode, kube-proxy replacement).
 
-- **Hardware Simulation:** Run:ai Fake-GPU Operator (8x H100 simulation per node).
+**Hardware Simulation:** Run:ai Fake-GPU Operator & KWOK for hyperscale modeling.
 
-**Security Model:**
+**The Phases**
 
-- Cilium Network Policies (CNP) for Zero-Trust egress/ingress.
+- **Phase 1:** Cluster Creation – Baseline provisioning with Cilium injection and L7 observability.
 
-- Explicit L7 gRPC/HTTP inspection for inference traffic.
+- **Phase 2:** GPU Simulation – H100 virtualization and Zero-Trust egress policy enforcement.
 
-- Automated blocking of unauthorized C2C (Command & Control) communication.
+- **Phase 3:** Hyperscale Simulation – Hydration of 2,000 nodes and 20,000 pods on a single control plane.
 
-- Observability: Hubble UI + Hubble CLI for kernel-level flow auditing.
+**Phase 3: Hyperscale Engineering**
 
-**Architecture:**
+Phase 3 represents the "stress test" of the platform, pushing the Kubernetes control plane to its theoretical saturation points.
 
-The architecture illustrates the control plane’s integration with virtualized GPU nodes and the eBPF data path. It maps the flow of inference requests through the Cilium service mesh, ensuring that every packet is authenticated and authorized before reaching simulated NVIDIA silicon.
+**Key Achievements:**
 
-Key concepts illustrated:
+- **The Hydration Engine:** A 700+ line idempotent bash script that automates the lifecycle of a heterogeneous GPU fleet.
 
-- Control plane to Kubelet communication (Port 10250) auditing.
+- **Kernel Hardening:** Tuned the guest OS to handle massive I/O by pushing to 1M+ file descriptors and 500k+ inotify watches.
 
-- Namespace-scoped isolation for GPU workloads.
+- **Etcd Optimization:** Refactored the etcd quota-backend to 6Gi and tuned API server mutation limits to survive the hydration of 20,000 concurrent objects.
 
-- Virtual GPU device-plugin registration and scheduling.
+- **Multi-Vendor Orchestration:** Managed 20 distinct GPU architectures across NVIDIA, AMD, and Intel, utilizing surgical logic to clear ClusterRole and DeviceClass collisions.
 
-- Zero-Trust egress boundaries preventing data exfiltration.
-
-**The Zero-Trust Mission:**
+**The Zero-Trust Mission**
 
 This platform operates on a "deny-by-default" posture:
 
-- **Implicit Deny:** No workload-to-workload or workload-to-internet traffic is allowed unless explicitly defined.
-
 - **Identity-Based:** Security is enforced via cryptographic workload identities, not ephemeral IP addresses.
 
-- **Egress Hardening:** Specifically designed to block data exfiltration attempts and unauthorized external API calls.
+- **Egress Hardening:** Specifically designed to block data exfiltration attempts and unauthorized external API calls (C2C).
 
 - **Observed Validation:** Enforcement is verified through real-time packet drops in the eBPF datapath, captured via Hubble.
 
-**Observability and Validation:**
+**Key Lessons Learned**
 
-Observability is the primary mechanism for validating the security posture:
+- **Abstractions Evaporate at Scale:** Kubernetes is stable until you hit the point where the Linux kernel and etcd state store start fighting for resources. Scaling to 2k nodes is a kernel-tuning exercise, not a YAML exercise.
 
-- **Cilium-dbg:** Verified policy attachment and endpoint state at the node level.
-
-- **Hubble Observe:** Captured and audited gRPC flows between simulated inference pods.
-
-- **Stress Testing:** Validated scheduler failure states when over-requesting GPU resources.
-
-- **Egress Auditing:** Confirmed policy-driven drops for unauthorized external traffic.
-
-**Operational Logs:**
-
-Detailed, chronological logs with visual "receipts" (screenshots) document the project's evolution. All phases have tested bash scripts which fully automate each phase:
-
-- **Phase 1:** Cluster Creation - Cilium injection and L7 observability setup.
-
-- **Phase 2:** GPU Simulation - H100 virtualization and Zero-Trust policy enforcement.
-
-**Key Lessons Learned:**
-
-- **GPU Scheduling Logic:** The Kubernetes scheduler requires precise node labeling to prevent "Pending" state loops in virtualized environments.
-
-- **eBPF Efficiency:** Replacing kube-proxy with Cilium significantly reduces latency in high-concurrency gRPC inference workloads.
-
-- **Failure as Signal:** Intentionally over-requesting resources is the only way to validate that the GPU operator and scheduler are communicating correctly.
+- **eBPF Efficiency:** Replacing kube-proxy with Cilium significantly reduces latency and CPU jitter in high-concurrency gRPC inference workloads.
 
 - **Observability is Mandatory:** Without Hubble, Zero-Trust is just a theory. You must see the packet drop to confirm the policy is alive.
+
+---
+<u>**Justin D. Sniesak**</u>  
+*Senior Site Reliability Engineer | Platform Architect*
