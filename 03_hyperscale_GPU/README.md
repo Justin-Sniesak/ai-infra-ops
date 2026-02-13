@@ -1,8 +1,10 @@
 Phase 3 repo.
 
-.
-├── README.md
-├── hyperscale_hydration.sh          # The master orchestration engine
+```
+├── buildscript_removescript_archdiagram/
+│   ├── hyperscaleautomation.sh
+│   ├── hyperscaleGPUFleet.drawio.png
+│   └── kwokRemove.sh
 ├── hyperscale_output_deployments/   # Pod-level validation receipts (20 pairs)
 │   ├── a30Deployment.txt
 │   ├── a30PodsGPUCount.txt
@@ -128,6 +130,7 @@ Phase 3 repo.
 │       ├── kwokNodesmi355x.yaml
 │       ├── kwokNodesT4.yaml
 │       └── kwokNodesV100.yaml
+├── screenshots/
 └── scripts/                         # Supporting for-loop bash scripts
     ├── a30Nodes.sh
     ├── a100Nodes.sh
