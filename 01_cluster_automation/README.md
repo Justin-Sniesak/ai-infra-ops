@@ -1,4 +1,4 @@
-**Phase 1: High-Performance Networking & L7 Observability**
+### Phase 1: High-Performance Networking & L7 Observability
 
 This phase focuses on the foundational layer of the AI Infra stack: architecting a resilient 4-node Kubernetes cluster with Cilium eBPF for advanced networking and Hubble for deep flow observability.
 
