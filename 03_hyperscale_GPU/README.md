@@ -1,4 +1,4 @@
-**Hyperscale Heterogeneous GPU Simulation Engine**
+### Hyperscale Heterogeneous GPU Simulation Engine
 
 ```
 ├── buildscript_removescript_archdiagram/
