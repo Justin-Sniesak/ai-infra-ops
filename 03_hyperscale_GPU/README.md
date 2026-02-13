@@ -78,5 +78,5 @@ Bash
 chmod +x buildscript_removescript_archdiagram/kwokRemove.sh
 ./buildscript_removescript_archdiagram/kwokRemove.sh
 
-<u>**Justin D. Sniesak**</u> 
-*Senior Site Reliability Engineer | Platform Architect*
+**Justin D. Sniesak**
+**Senior Site Reliability Engineer | Platform Architect**
