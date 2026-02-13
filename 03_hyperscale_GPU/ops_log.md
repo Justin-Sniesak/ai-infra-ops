@@ -42,6 +42,16 @@
   ![h20](../03_hyperscale_GPU/screenshots/h20.jpg)
 - 02-11-2026 MI300A GPU-Operator pods and namespace creation.
   ![h21](../03_hyperscale_GPU/screenshots/h21.jpg)
+- 02-11-2026 jaguarShores GPU-Operator pods and namespace creation.
+  ![h22](../03_hyperscale_GPU/screenshots/h22.jpg)
+- 02-11-2026 falconShores GPU-Operator pods and namespace creation.
+  ![h23](../03_hyperscale_GPU/screenshots/h23.jpg)
+- 02-11-2026 crescentIsland GPU-Operator pods and namespace creation.
+  ![h24](../03_hyperscale_GPU/screenshots/h24.jpg)
+- 02-11-2026 max1550 GPU-Operator pods and namespace creation.
+  ![h25](../03_hyperscale_GPU/screenshots/h25.jpg)
+- 02-11-2026 B580 GPU-Operator pods and namespace creation.
+  ![h26](../03_hyperscale_GPU/screenshots/h26.jpg)
 
 
 
