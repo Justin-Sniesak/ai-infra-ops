@@ -4,7 +4,7 @@ This repository contains an automated orchestration engine designed to simulate 
 
 The project demonstrates advanced SRE capabilities in platform architecture, custom kernel tuning, and multi-vendor infrastructure-as-code (IaC).
 
-Please note - This script intentionally leans ‘WET’ (not aggressively DRY) to keep the orchestration obvious during high-scale debugging.
+Please note: This script intentionally leans “WET” (not aggressively DRY) to keep the orchestration obvious during high-scale debugging.
 
 **🚀 Architectural Overview**
 
