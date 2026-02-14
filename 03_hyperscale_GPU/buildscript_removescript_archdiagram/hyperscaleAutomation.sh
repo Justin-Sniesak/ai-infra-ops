@@ -45,7 +45,7 @@ KWOK_KUBE_VERSION=v1.35.0 kwokctl create cluster \
     --extra-args="kube-apiserver=max-requests-inflight=4000" \
     --extra-args="kube-apiserver=max-mutating-requests-inflight=2000"
 
-echo "Cluster created successfully. To switch context use 'kubectl config use-context seattle-lab-k8s-hyperscalegpucluster'"
+echo "Cluster created successfully. To switch context use 'kubectl config use-context kwok-seattle-lab-k8s-hyperscalegpucluster'"
 kwokctl get clusters
 
 #Validate all bash scripts and node manifests are present on the control plane node.
