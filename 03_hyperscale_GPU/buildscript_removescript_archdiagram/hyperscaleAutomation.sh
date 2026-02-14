@@ -6,7 +6,7 @@ set -euo pipefail
 SECONDS=0
 
 #Update packages and install jq, kubectl, wget, helm and curl if not already installed. Then, set env vars. Then, download the binaries, chmod them and move them for KWOK and kwokctl. Finally, validate each installed version.
-sudo apt update && sudo apt install curl wget jq
+sudo apt update && sudo apt install curl wget jq -y
 KWOK_REPO=kubernetes-sigs/kwok
 KWOK_LATEST_RELEASE=$(curl -s "https://api.github.com/repos/${KWOK_REPO}/releases/latest" | jq -r '.tag_name')
 wget -O kwokctl -c "https://github.com/${KWOK_REPO}/releases/download/${KWOK_LATEST_RELEASE}/kwokctl-linux-arm64"
