@@ -609,7 +609,7 @@ kubectl get pods -l gpu=v100 -n v100 -o custom-columns='NAME:.metadata.name,GPU_
 kubectl create -f l4Deployment.yaml --namespace=l4
 echo "Waiting for pods to be 1/1 ready...."
 kubectl wait --for=condition=Available deployment/l4 -n l4 --timeout=300s
-kubectl wait --for=condition=Ready pods --all -n l4 -timeout=300s > hyperscale_output_deployments/l4Deployment.txt
+kubectl wait --for=condition=Ready pods --all -n l4 --timeout=300s > hyperscale_output_deployments/l4Deployment.txt
 echo "Validate (1) GPU provisioned for each pod. Check created txt files for details. Path is hyperscale_output_deployments/l4PodsGPUCount.txt"
 kubectl get pods -l gpu=l4 -n l4 -o custom-columns='NAME:.metadata.name,GPU_COUNT:.spec.containers[*].resources.limits.nvidia\.com/gpu,GPU_TYPE:.metadata.labels.gpu' > hyperscale_output_deployments/l4PodsGPUCount.txt
 echo "Sleeping 60 seconds to allow time for ETCD commits to finish then move to the next cluster..."
