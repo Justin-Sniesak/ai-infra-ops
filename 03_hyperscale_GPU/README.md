@@ -12,6 +12,8 @@ Please note: This script intentionally leans “WET” (not aggressively DRY) to
 
 The simulation utilizes KWOK (Kubernetes Without Kubelet) and a customized Fake GPU Operator to mimic hyperscale workloads on a single control plane.
 
+![Architecture overview](buildscript_removescript_archdiagram/hyperscaleGPUFleet.drawio.png)
+
 **Core Components**
 
 - **Capacity:** 2,000 Nodes / 20,000 Pods.
