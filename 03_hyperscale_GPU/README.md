@@ -2,7 +2,7 @@
 
 This repository contains an automated orchestration engine designed to simulate a Tier-1 hyperscale Kubernetes environment. It provisions 2,000 nodes and 20,000 pods across 20 distinct GPU architectures from NVIDIA, AMD, and Intel.
 
-The project demonstrates advanced SRE capabilities in platform architecture, custom kernel tuning, and multi-vendor infrastructure-as-code (IaC).
+The project demonstrates advanced SRE capabilities in platform architecture, custom kernel tuning, and multi-vendor infrastructure-as-code (IaC). One control plane, 20 GPU pools, deterministic receipts.
 
 Please note: This script intentionally leans “WET” (not aggressively DRY) to keep the orchestration obvious during high-scale debugging. This repo optimizes for operational clarity and debuggability under scale constraints; refactors come after behavior is proven.
 
