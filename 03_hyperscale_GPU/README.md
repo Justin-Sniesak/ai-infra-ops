@@ -4,6 +4,8 @@ This repository contains an automated orchestration engine designed to simulate 
 
 The project demonstrates advanced SRE capabilities in platform architecture, custom kernel tuning, and multi-vendor infrastructure-as-code (IaC). One control plane, 20 GPU pools, deterministic receipts.
 
+Per GPU pool: 100 nodes × 10 GPUs/node = 1,000 GPUs; 1,000 pods (1 GPU/pod). Total: 20 pools = 2,000 nodes / 20,000 pods.
+
 Please note: This script intentionally leans “WET” (not aggressively DRY) to keep the orchestration obvious during high-scale debugging. This repo optimizes for operational clarity and debuggability under scale constraints; refactors come after behavior is proven.
 
 **🚀 Architectural Overview**
@@ -76,8 +78,10 @@ The simulation partitions the 2,000-node fleet into 20 models (100 nodes each). 
 
 To decommission the simulation and release all local resources:
 
+```
 chmod +x buildscript_removescript_archdiagram/kwokRemove.sh
 ./buildscript_removescript_archdiagram/kwokRemove.sh
+```
 
 ---
 <u>**Justin D. Sniesak**</u>  
