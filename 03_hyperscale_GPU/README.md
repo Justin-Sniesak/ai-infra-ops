@@ -4,7 +4,7 @@ This repository contains an automated orchestration engine designed to simulate 
 
 The project demonstrates advanced SRE capabilities in platform architecture, custom kernel tuning, and multi-vendor infrastructure-as-code (IaC).
 
-Please note: This script intentionally leans “WET” (not aggressively DRY) to keep the orchestration obvious during high-scale debugging.
+Please note: This script intentionally leans “WET” (not aggressively DRY) to keep the orchestration obvious during high-scale debugging. This repo optimizes for operational clarity and debuggability under scale constraints; refactors come after behavior is proven.
 
 **🚀 Architectural Overview**
 
@@ -76,7 +76,6 @@ The simulation partitions the 2,000-node fleet into 20 models (100 nodes each). 
 
 To decommission the simulation and release all local resources:
 
-Bash
 chmod +x buildscript_removescript_archdiagram/kwokRemove.sh
 ./buildscript_removescript_archdiagram/kwokRemove.sh
 
