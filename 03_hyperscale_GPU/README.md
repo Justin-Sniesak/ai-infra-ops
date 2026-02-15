@@ -18,7 +18,7 @@ The simulation utilizes KWOK (Kubernetes Without Kubelet) and a customized Fake 
 
 - **Advanced Networking:** Custom sysctl tuning for high-concurrency connection handling.
 
-- **State Optimization:** Optimized etcd backend with expanded 6Gi quotas to support massive object hydration without API server collapse.
+- **State Optimization:** Optimized etcd backend with expanded 6GiB quotas to support massive object hydration without API server collapse.
 
 **📁 Repository Structure**
 
