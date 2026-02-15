@@ -1,18 +1,12 @@
-# Polyform Noncommercial License 1.0.0
+Copyright (c) 2026 Justin D. Sniesak. All rights reserved.
 
-**Copyright (c) 2026 Justin D Sniesak**
+This repository is provided for viewing and evaluation purposes only.
 
-## 1. Acceptance
-By using this software, you agree to these terms. If you do not agree, you have no right to use this software.
+Permission is granted to technical recruiters, hiring managers, and interview participants to:
+- view the contents of this repository;
+- share it internally within their organization solely for candidate evaluation;
+- run the software for evaluation in a non-production environment.
 
-## 2. Noncommercial Grant
-The licensor grants you a personal, non-exclusive, royalty-free license to use, copy, and modify this software for noncommercial purposes only.
+No other rights are granted. You may not copy, modify, redistribute, publish, sublicense, sell, or use this software (or substantial portions of it) for any commercial purpose or in any production environment without prior written permission.
 
-## 3. "Noncommercial" Definition
-Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.
-
-## 4. Recruiter Exception
-Permission is explicitly granted to technical recruiters and hiring managers to review and execute this software for the purpose of professional candidate evaluation.
-
-## 5. No Warranty
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY.
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY.
